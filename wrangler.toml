@@ -1,0 +1,16 @@
+# Cloudflare Pages project config.
+#
+# The site is plain static files at the repo root, so there is no build step —
+# `pages_build_output_dir` just points at the directory to publish. The
+# `functions/` directory is picked up automatically and deployed as Workers.
+#
+# Secrets are NOT set here. Add them in the Cloudflare dashboard under
+# Workers & Pages → your project → Settings → Variables and Secrets:
+#
+#   SUPABASE_URL               (plaintext)
+#   SUPABASE_ANON_KEY          (plaintext)
+#   SUPABASE_SERVICE_ROLE_KEY  (secret — never expose this to the browser)
+
+name = "jss-tailoring-akademi"
+compatibility_date = "2026-08-09"
+pages_build_output_dir = "public"

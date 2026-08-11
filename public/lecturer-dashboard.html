@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecturer Dashboard | JSS Tailoring Akademi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">J</span>
+          <span>JSS Tailoring Akademi</span>
+        </a>
+        <nav class="sidebar-nav">
+          <a href="lecturer-dashboard.html">▣ Dashboard</a>
+          <a href="lecturer-materials.html">▤ Learning Materials</a>
+          <a href="lecturer-assignments.html">▤ Assignments</a>
+          <a href="lecturer-submissions.html">▤ Submissions</a>
+          <a href="#" data-logout>▤ Log out</a>
+        </nav>
+        <div class="sidebar-footer">
+          <strong>Instructor Workspace</strong>
+          <p>Manage teaching operations with clarity and precision.</p>
+        </div>
+      </aside>
+
+      <main class="main-shell">
+        <div class="topbar">
+          <div>
+            <div class="breadcrumbs">Home / Lecturer / Dashboard</div>
+            <h2>Instructor overview</h2>
+          </div>
+          <div class="topbar-actions">
+            <div class="user-chip">
+              <span class="avatar" data-user-initials></span>
+              <span><strong data-user-name></strong><br /><span data-user-role></span></span>
+            </div>
+            <a class="btn btn-primary" href="lecturer-materials.html">Upload material</a>
+          </div>
+        </div>
+
+        <section class="metric-grid">
+          <div class="metric-card">
+            <strong id="metric-materials">—</strong>
+            <span>Materials published</span>
+          </div>
+          <div class="metric-card">
+            <strong id="metric-assignments">—</strong>
+            <span>Assignments set</span>
+          </div>
+          <div class="metric-card">
+            <strong id="metric-submissions">—</strong>
+            <span>Submissions received</span>
+          </div>
+          <div class="metric-card">
+            <strong id="metric-students">—</strong>
+            <span>Students enrolled</span>
+          </div>
+        </section>
+
+        <section class="dashboard-grid">
+          <div class="card">
+            <div class="page-header">
+              <h3>Recent submissions</h3>
+              <a href="lecturer-submissions.html">View all</a>
+            </div>
+            <ul class="list-card" id="recent-submissions">
+              <li class="spinner-row">Loading…</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="page-header">
+              <h3>Your assignments</h3>
+              <a href="lecturer-assignments.html">Manage</a>
+            </div>
+            <ul class="list-card" id="recent-assignments">
+              <li class="spinner-row">Loading…</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="grid-2">
+          <div class="card">
+            <div class="page-header">
+              <h3>Latest materials</h3>
+              <a href="lecturer-materials.html">Manage</a>
+            </div>
+            <ul class="list-card" id="recent-materials">
+              <li class="spinner-row">Loading…</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="page-header">
+              <h3>Quick actions</h3>
+            </div>
+            <div class="quick-actions">
+              <a class="btn btn-primary" href="lecturer-materials.html">Upload material</a>
+              <a class="btn btn-secondary" href="lecturer-assignments.html">Create assignment</a>
+              <a class="btn btn-secondary" href="lecturer-submissions.html">Review submissions</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script type="module" src="js/lecturer-dashboard.js"></script>
+  </body>
+</html>

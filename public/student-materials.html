@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Materials | JSS Tailoring Akademi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">J</span>
+          <span>JSS Tailoring Akademi</span>
+        </a>
+        <nav class="sidebar-nav">
+          <a href="student-dashboard.html">▣ Dashboard</a>
+          <a href="student-materials.html">▤ Learning Materials</a>
+          <a href="student-assignments.html">▤ Assignments</a>
+          <a href="#" data-logout>▤ Log out</a>
+        </nav>
+        <div class="sidebar-footer">
+          <strong>Student Portal</strong>
+          <p>Read notes online or download them to study offline.</p>
+        </div>
+      </aside>
+
+      <main class="main-shell">
+        <div class="topbar">
+          <div>
+            <div class="breadcrumbs">Home / Student / Learning Materials</div>
+            <h2>Learning materials</h2>
+          </div>
+          <div class="topbar-actions">
+            <label class="search-box">
+              <span>⌕</span>
+              <input id="material-search" placeholder="Search materials" />
+            </label>
+            <div class="user-chip">
+              <span class="avatar" data-user-initials></span>
+              <span><strong data-user-name></strong><br /><span data-user-role></span></span>
+            </div>
+          </div>
+        </div>
+
+        <section class="grid-3" id="materials-list">
+          <div class="spinner-row">Loading materials…</div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script type="module" src="js/student-materials.js"></script>
+  </body>
+</html>

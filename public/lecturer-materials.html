@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Materials | JSS Tailoring Akademi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">J</span>
+          <span>JSS Tailoring Akademi</span>
+        </a>
+        <nav class="sidebar-nav">
+          <a href="lecturer-dashboard.html">▣ Dashboard</a>
+          <a href="lecturer-materials.html">▤ Learning Materials</a>
+          <a href="lecturer-assignments.html">▤ Assignments</a>
+          <a href="lecturer-submissions.html">▤ Submissions</a>
+          <a href="#" data-logout>▤ Log out</a>
+        </nav>
+        <div class="sidebar-footer">
+          <strong>Instructor Workspace</strong>
+          <p>Publish notes and resources your students can download anytime.</p>
+        </div>
+      </aside>
+
+      <main class="main-shell">
+        <div class="topbar">
+          <div>
+            <div class="breadcrumbs">Home / Lecturer / Learning Materials</div>
+            <h2>Manage learning materials</h2>
+          </div>
+          <div class="topbar-actions">
+            <div class="user-chip">
+              <span class="avatar" data-user-initials></span>
+              <span><strong data-user-name></strong><br /><span data-user-role></span></span>
+            </div>
+          </div>
+        </div>
+
+        <section class="card" style="margin-bottom: 22px;">
+          <div class="page-header">
+            <h3>Upload a new material</h3>
+          </div>
+          <form class="form" id="material-form">
+            <div class="form-row">
+              <label class="field">
+                <span>Title</span>
+                <input type="text" id="material-title" placeholder="e.g. Pattern Construction Guide" required />
+              </label>
+              <label class="field">
+                <span>Subject</span>
+                <input type="text" id="material-subject" placeholder="e.g. Fashion Design" />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Short description</span>
+              <input type="text" id="material-desc" placeholder="What is this material about?" />
+            </label>
+
+            <label class="field">
+              <span>Notes</span>
+              <textarea
+                id="material-content"
+                placeholder="Type or paste your lecture notes here. Students can read them online and download them as a .txt file."
+              ></textarea>
+            </label>
+
+            <div class="field">
+              <span>Attach a file (optional)</span>
+              <div class="upload-area" id="upload-area">
+                <h3>Drag &amp; drop a file here</h3>
+                <p>PDF, DOCX, PPTX, ZIP, JPG, PNG — up to 20 MB</p>
+                <input type="file" id="file-input" hidden />
+                <button class="btn btn-secondary" type="button" id="browse-btn">Browse files</button>
+                <div class="file-preview" id="file-preview">
+                  <strong id="filename">No file selected</strong>
+                  <p id="file-type">Awaiting upload</p>
+                </div>
+              </div>
+              <small class="field-hint">
+                Notes alone are enough — a file is optional and requires Supabase Storage.
+              </small>
+            </div>
+
+            <div class="quick-actions">
+              <button class="btn btn-primary" type="submit" id="material-submit">Publish material</button>
+              <button class="btn btn-secondary" type="reset" id="material-reset">Clear</button>
+            </div>
+            <p class="form-message" id="material-message"></p>
+          </form>
+        </section>
+
+        <div class="page-header">
+          <h3>Published materials</h3>
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="material-search" placeholder="Search materials" />
+          </label>
+        </div>
+        <section class="grid-3" id="materials-list">
+          <div class="spinner-row">Loading materials…</div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script type="module" src="js/lecturer-materials.js"></script>
+  </body>
+</html>

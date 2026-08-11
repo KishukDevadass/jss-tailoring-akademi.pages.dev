@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignments | JSS Tailoring Akademi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">J</span>
+          <span>JSS Tailoring Akademi</span>
+        </a>
+        <nav class="sidebar-nav">
+          <a href="lecturer-dashboard.html">▣ Dashboard</a>
+          <a href="lecturer-materials.html">▤ Learning Materials</a>
+          <a href="lecturer-assignments.html">▤ Assignments</a>
+          <a href="lecturer-submissions.html">▤ Submissions</a>
+          <a href="#" data-logout>▤ Log out</a>
+        </nav>
+        <div class="sidebar-footer">
+          <strong>Instructor Workspace</strong>
+          <p>Set clear tasks and deadlines, then track who has turned work in.</p>
+        </div>
+      </aside>
+
+      <main class="main-shell">
+        <div class="topbar">
+          <div>
+            <div class="breadcrumbs">Home / Lecturer / Assignments</div>
+            <h2>Create &amp; manage assignments</h2>
+          </div>
+          <div class="topbar-actions">
+            <div class="user-chip">
+              <span class="avatar" data-user-initials></span>
+              <span><strong data-user-name></strong><br /><span data-user-role></span></span>
+            </div>
+          </div>
+        </div>
+
+        <section class="card" style="margin-bottom: 22px;">
+          <div class="page-header">
+            <h3>New assignment</h3>
+          </div>
+          <form class="form" id="assignment-form">
+            <div class="form-row">
+              <label class="field">
+                <span>Title</span>
+                <input type="text" id="assignment-title" placeholder="e.g. Tailoring Portfolio" required />
+              </label>
+              <label class="field">
+                <span>Subject</span>
+                <input type="text" id="assignment-subject" placeholder="e.g. Garment Tech" />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Instructions</span>
+              <textarea
+                id="assignment-desc"
+                placeholder="Explain the task, what to submit, and how it will be assessed."
+                required
+              ></textarea>
+            </label>
+
+            <div class="form-row">
+              <label class="field">
+                <span>Due date</span>
+                <input type="date" id="assignment-due" />
+              </label>
+              <label class="field">
+                <span>Total marks</span>
+                <input type="number" id="assignment-marks" min="1" max="1000" placeholder="100" />
+              </label>
+            </div>
+
+            <div class="quick-actions">
+              <button class="btn btn-primary" type="submit" id="assignment-submit">Create assignment</button>
+              <button class="btn btn-secondary" type="reset">Clear</button>
+            </div>
+            <p class="form-message" id="assignment-message"></p>
+          </form>
+        </section>
+
+        <div class="page-header">
+          <h3>Your assignments</h3>
+        </div>
+        <section class="grid-2" id="assignments-list">
+          <div class="spinner-row">Loading assignments…</div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script type="module" src="js/lecturer-assignments.js"></script>
+  </body>
+</html>

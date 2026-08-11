@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submissions | JSS Tailoring Akademi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">J</span>
+          <span>JSS Tailoring Akademi</span>
+        </a>
+        <nav class="sidebar-nav">
+          <a href="lecturer-dashboard.html">▣ Dashboard</a>
+          <a href="lecturer-materials.html">▤ Learning Materials</a>
+          <a href="lecturer-assignments.html">▤ Assignments</a>
+          <a href="lecturer-submissions.html">▤ Submissions</a>
+          <a href="#" data-logout>▤ Log out</a>
+        </nav>
+        <div class="sidebar-footer">
+          <strong>Instructor Workspace</strong>
+          <p>Everything your students have turned in, grouped by assignment.</p>
+        </div>
+      </aside>
+
+      <main class="main-shell">
+        <div class="topbar">
+          <div>
+            <div class="breadcrumbs">Home / Lecturer / Submissions</div>
+            <h2>Student submissions</h2>
+          </div>
+          <div class="topbar-actions">
+            <div class="user-chip">
+              <span class="avatar" data-user-initials></span>
+              <span><strong data-user-name></strong><br /><span data-user-role></span></span>
+            </div>
+          </div>
+        </div>
+
+        <section class="metric-grid" style="margin-bottom: 22px;">
+          <div class="metric-card">
+            <strong id="metric-total">—</strong>
+            <span>Total submissions</span>
+          </div>
+          <div class="metric-card">
+            <strong id="metric-assignments">—</strong>
+            <span>Assignments set</span>
+          </div>
+          <div class="metric-card">
+            <strong id="metric-students">—</strong>
+            <span>Students who submitted</span>
+          </div>
+          <div class="metric-card">
+            <strong id="metric-late">—</strong>
+            <span>Late submissions</span>
+          </div>
+        </section>
+
+        <section id="submissions-list">
+          <div class="spinner-row">Loading submissions…</div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script type="module" src="js/lecturer-submissions.js"></script>
+  </body>
+</html>

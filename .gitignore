@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Env / secrets
+.env
+.env.local
+
+# Build output from static hosts
+dist/
+.vercel/
+.netlify/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cloudflare
+.dev.vars
+.wrangler/

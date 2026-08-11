@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignments | JSS Tailoring Akademi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">J</span>
+          <span>JSS Tailoring Akademi</span>
+        </a>
+        <nav class="sidebar-nav">
+          <a href="student-dashboard.html">▣ Dashboard</a>
+          <a href="student-materials.html">▤ Learning Materials</a>
+          <a href="student-assignments.html">▤ Assignments</a>
+          <a href="#" data-logout>▤ Log out</a>
+        </nav>
+        <div class="sidebar-footer">
+          <strong>Student Portal</strong>
+          <p>Read the brief, then submit your work before the deadline.</p>
+        </div>
+      </aside>
+
+      <main class="main-shell">
+        <div class="topbar">
+          <div>
+            <div class="breadcrumbs">Home / Student / Assignments</div>
+            <h2>Your assignments</h2>
+          </div>
+          <div class="topbar-actions">
+            <div class="user-chip">
+              <span class="avatar" data-user-initials></span>
+              <span><strong data-user-name></strong><br /><span data-user-role></span></span>
+            </div>
+          </div>
+        </div>
+
+        <section id="assignments-list">
+          <div class="spinner-row">Loading assignments…</div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Submission modal -->
+    <div class="modal-backdrop" id="submit-modal">
+      <div class="modal">
+        <div class="page-header">
+          <h3 id="modal-title">Submit assignment</h3>
+          <button class="btn btn-secondary" type="button" id="modal-close">Close</button>
+        </div>
+        <form class="form" id="submit-form">
+          <label class="field">
+            <span>Your answer</span>
+            <textarea id="submit-text" placeholder="Type your answer or a note for your lecturer…"></textarea>
+          </label>
+
+          <div class="field">
+            <span>Attach your work (optional)</span>
+            <div class="upload-area" id="upload-area">
+              <h3>Drag &amp; drop your submission</h3>
+              <p>PDF, DOCX, PPTX, ZIP, JPG, PNG — up to 20 MB</p>
+              <input type="file" id="file-input" hidden />
+              <button class="btn btn-secondary" type="button" id="browse-btn">Browse files</button>
+              <div class="file-preview" id="file-preview">
+                <strong id="filename">No file selected</strong>
+                <p id="file-type">Awaiting upload</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-actions">
+            <button class="btn btn-primary" type="submit" id="submit-btn">Submit work</button>
+            <button class="btn btn-secondary" type="button" id="modal-cancel">Cancel</button>
+          </div>
+          <p class="form-message" id="submit-message"></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script type="module" src="js/student-assignments.js"></script>
+  </body>
+</html>
